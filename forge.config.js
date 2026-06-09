@@ -24,6 +24,19 @@ module.exports = {
       config: {}
     }
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        authToken: process.env.GITHUB_TOKEN,
+        repository: {
+          owner: 'jasel-lewis',
+          name: 'com.jasel.trading.position-calculator'
+        },
+        prerelease: false
+      }
+    }
+  ],
   plugins: [
     {
       name: '@electron-forge/plugin-auto-unpack-natives',
