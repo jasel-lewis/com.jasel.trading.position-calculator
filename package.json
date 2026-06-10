@@ -9,7 +9,7 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "publish": "electron-forge publish",
+    "publish": "env-cmd electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
@@ -33,6 +33,7 @@
     "babel-loader": "^10.1.1",
     "css-loader": "^6.11.0",
     "electron": "42.3.3",
+    "env-cmd": "^11.0.0",
     "node-loader": "^2.1.0",
     "postcss": "^8.5.15",
     "postcss-loader": "^8.2.1",
