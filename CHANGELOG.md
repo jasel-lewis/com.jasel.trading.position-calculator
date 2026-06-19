@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- A `repository` field in `package.json` so the updater can locate published releases.
+
+### Changed
+- Revamped the project `README` documenting the features, calculation formulas, and build/publish workflow, with an app screenshot.
+- The auto-updater now runs only in packaged builds; it is skipped during development so `npm start` no longer aborts when there is no published release to check against.
+
+## [1.1.1] - 2026-06-09
+
+### Added
+- `env-cmd` to load a `GITHUB_TOKEN` from the environment when publishing; the `publish` script now runs `env-cmd electron-forge publish`.
+
+## [1.1.0] - 2026-06-09
+
+### Added
+- GitHub release publishing via `@electron-forge/publisher-github`.
+- Automatic update checks via `update-electron-app`.
+
 ## [1.0.0] - 2026-06-09
 
 ### Added
