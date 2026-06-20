@@ -2,7 +2,11 @@ const { app, BrowserWindow } = require('electron');
 const { updateElectronApp } = require('update-electron-app');
 const path = require('node:path');
 
-updateElectronApp(); // additional configuration options available
+// Only check for updates in a packaged build; in development there's no
+// published release to update from, and the updater would otherwise abort.
+if (app.isPackaged) {
+    updateElectronApp(); // additional configuration options available
+}
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
