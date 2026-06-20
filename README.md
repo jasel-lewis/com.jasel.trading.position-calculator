@@ -6,7 +6,7 @@ take-profit, and what you're actually risking once leverage is applied — with
 inline validation and one-click copy of the results.
 
 <p align="center">
-  <img src="docs/screenshot.png" alt="Position Calculator app window" width="428" />
+  <img src="docs/screenshot.png" alt="Position Calculator app window" width="400" />
 </p>
 
 > **Disclaimer:** This is a personal utility for calculating position sizes. It

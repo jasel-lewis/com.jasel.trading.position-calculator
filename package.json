@@ -1,7 +1,7 @@
 {
   "name": "com.jasel.trading.position-calculator",
   "productName": "Position Calculator",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Stock order position calculator to calculate the position size, take profit amount, the actual risk percentage and the actual risk in dollars based on the balance, entry, exit, risk:reward and leverage",
   "main": ".webpack/main",
   "private": true,
@@ -13,6 +13,7 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
+    "prepublish": "node scripts/pre-publish-check.mjs",
     "publish": "env-cmd electron-forge publish",
     "lint": "echo \"No linting configured\""
   },

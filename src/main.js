@@ -1,6 +1,9 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, screen } = require('electron');
 const { updateElectronApp } = require('update-electron-app');
 const path = require('node:path');
+
+const windowWidth = 780;
+const windowHeight = 640;
 
 // Only check for updates in a packaged build; in development there's no
 // published release to update from, and the updater would otherwise abort.
@@ -15,9 +18,10 @@ if (require('electron-squirrel-startup')) {
 
 const createWindow = () => {
     // Create the browser window.
+    const { scaleFactor } = screen.getPrimaryDisplay();
     const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: Math.round(windowWidth / scaleFactor),
+        height: Math.round(windowHeight / scaleFactor),
         webPreferences: {
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY
         }
@@ -25,9 +29,6 @@ const createWindow = () => {
 
     // and load the index.html of the app.
     mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-
-    // Open the DevTools.
-    mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished

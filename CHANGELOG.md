@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-06-20
+
+### Added
+- `scripts/pre-publish-check.mjs` — a Node script run automatically as a `prepublish` hook that verifies the `master` branch is checked out and that the most recent git tag matches the `version` field in `package.json`. If either condition fails it reports the issue(s) and prompts whether to proceed (default: No).
+
+### Changed
+- Initial window size set to 780 × 640 (width × height). Size is divided by the primary display's `scaleFactor` at creation time so the window renders at the intended dimensions regardless of Windows DPI scaling.
+- Dev Tools no longer opens automatically on launch; it remains accessible via **View → Toggle Developer Tools** or `Ctrl+Shift+I`.
+
 ## [1.2.0] - 2026-06-19
 
 ### Added
