@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- `scripts/pre-publish-check.mjs` — a Node script run automatically as a `prepublish` hook that verifies the `master` branch is checked out and that the most recent git tag matches the `version` field in `package.json`. If either condition fails it reports the issue(s) and prompts whether to proceed (default: No).
+
 ## [1.2.0] - 2026-06-19
 
 ### Added
